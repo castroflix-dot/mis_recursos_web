@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Recursos Web</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <canvas id="matrixCanvas"></canvas>
+
+    <header class="matrix-header">
+        <video autoplay muted loop playsinline id="headerVideo">
+            <source src="video/Matrix.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+
+        <div class="overlay"></div>
+
+        <div class="header-content text-center">
+            <h1 class="display-3 font-weight-bold">Mis Enlaces de Interés</h1>
+            <p class="lead">Herramientas esenciales para el desarrollo y diseño web</p>
+            <a href="#tutoriales" class="btn btn-outline-success btn-lg mt-3">By Kandalflix</a>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+
+        <!-- SECCION Tutoriales y Validación -->
+
+        <h2 class="category-title">Tutoriales y Validación</h2>
+        <div class="row row-cols-1 row-cols-md-3 mb-5">
+            <div class="col">
+                <div class="card h-100 border-primary bg-dark text-white">
+                    <div class="card-body">
+                        <h5>Tutoriales Programación Ya</h5>
+                        <p class="card-text small">Tutoriales varios muy interesantes para aprender paso a paso 3].</p>
+                        <a href="https://www.tutorialesprogramacionya.com/" target="_blank"
+                            class="btn btn-primary btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">MDN Web Docs</h5>
+                        <p class="card-text small text-muted">Es la documentación oficial de HTML, CSS y
+                            JS de Mozilla.</p>
+                        <a href="https://developer.mozilla.org/" target="_blank"
+                            class="btn btn-outline-primary btn-sm w-100">Consultar MDN</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <div class="card-body">
+                        <h5>Validador HTML (W3C)</h5>
+                        <p class="card-text small">Herramienta para validar tu código por subida de archivo.
+                        </p>
+                        <a href="https://validator.w3.org/?authuser=0#validate_by_upload" target="_blank"
+                            class="btn btn-primary btn-sm w-100">Validar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <div class="card-body">
+                        <h5>Validador CSS (W3C)</h5>
+                        <p class="card-text small">Servicio de validación de hojas de estilo CSS de la W3C.</p>
+                        <a href="https://jigsaw.w3.org/css-validator/?authuser=0" target="_blank"
+                            class="btn btn-primary btn-sm w-100">Validar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCION Diseño CSS y Generadores Visuales -->
+
+        <h2 class="category-title">Diseño CSS y Generadores Visuales</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mb-5">
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Color Hunt</h6>
+                        <p class="card-text small">Gamas de colores y paletas para inspiración diaria.</p>
+                        <a href="https://colorhunt.co" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Canva Colors</h6>
+                        <p class="card-text small">Herramientas para aprender sobre combinaciones de colores.</p>
+                        <a href="https://www.canva.com/colors" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Coolors</h6>
+                        <p class="card-text small">Generador de paletas de colores ultra rápido.</p>
+                        <a href="https://coolors.co" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">CSS Gradient</h6>
+                        <p class="card-text small">Crea degradados lineales y radiales de forma visual.</p>
+                        <a href="https://cssgradient.io/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Free Frontend</h6>
+                        <p class="card-text small">Colección de patrones de fondo en CSS.</p>
+                        <a href="https://freefrontend.com/css-background-patterns" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">CSS3 Patterns</h6>
+                        <p class="card-text small">Galería de patrones complejos creados con CSS puro.</p>
+                        <a href="https://projects.verou.me/css3patterns" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">CSS Pattern</h6>
+                        <p class="card-text small">Generador y librería de patrones modernos.</p>
+                        <a href="https://css-pattern.com/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">uiGradients</h6>
+                        <p class="card-text small">Biblioteca de degradados listos para copiar y pegar.</p>
+                        <a href="https://uigradients.com/#SublimeVivid" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">SVG Wave Gen</h6>
+                        <p class="card-text small">Herramienta de Softr para generar ondas personalizadas.</p>
+                        <a href="https://www.softr.io/tools/svg-wave-generator" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">SVGWave.in</h6>
+                        <p class="card-text small">Generador de ondas con múltiples capas y colores.</p>
+                        <a href="https://svgwave.in/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">SVG Gen Guide</h6>
+                        <p class="card-text small">Recopilación de Smashing Magazine sobre generadores SVG.</p>
+                        <a href="https://www.smashingmagazine.com/2021/03/svg-generators/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCION Iconografía y Recursos Visuales -->
+
+        </div>
+        <h2 class="category-title">Iconografía y Recursos Visuales</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mb-5">
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Bootstrap Icons</h6>
+                        <p class="card-text small">La librería por excelencia. Vincula su archivo css para disponer de
+                            todos os iconos.</p>
+                        <a href="https://icons.getbootstrap.com/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Buscar Iconos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Font Awesome</h6>
+                        <p class="card-text small">La librería de iconos de las más famosas del mundo.</p>
+                        <a href="https://fontawesome.com/icons" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Buscar Iconos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Lordicon</h6>
+                        <p class="card-text small">Iconos animados con Lottie para interfaces dinámicas.</p>
+                        <a href="https://lordicon.com/" target="_blank" class="btn btn-outline-light btn-sm w-100">Ver
+                            Animaciones</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Flaticon</h6>
+                        <p class="card-text small">Millones de iconos e stickers gratuitos (PNG/SVG).</p>
+                        <a href="https://www.flaticon.es/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Explorar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Get Waves</h6>
+                        <p class="card-text small">Generador de ondas SVG para secciones web.</p>
+                        <a href="https://getwaves.io/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Haikei</h6>
+                        <p class="card-text small">Generadores de formas, ondas y fondos poligonales.</p>
+                        <a href="https://haikei.app/generators/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">BGJar</h6>
+                        <p class="card-text small">Generador gratuito de fondos SVG para tus proyectos.</p>
+                        <a href="https://bgjar.com/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">SVG Artista</h6>
+                        <p class="card-text small">Ayuda a animar tus archivos SVG con código CSS.</p>
+                        <a href="https://svgartista.net/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Colorffy</h6>
+                        <p class="card-text small">Herramientas de color todo en uno: gradientes, paletas y generadores
+                            de activos de diseño.</p>
+                        <a href="https://colorffy.com/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCION Editores y Multimedia -->
+
+        <h2 class="category-title">Editores y Multimedia</h2>
+        <div class="row row-cols-1 row-cols-md-3 mb-5">
+            <div class="col">
+                <div class="card h-100 border-danger">
+                    <div class="card-body">
+                        <h5>Remove.bg</h5>
+                        <p class="card-text">Para quitar el fondo de una imagen automáticamente.</p>
+                        <a href="https://removebg.com" target="_blank" class="btn btn-danger btn-sm">Abrir</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>Photopea</h5>
+                        <p class="card-text">Editor de fotos profesional online.</p>
+                        <a href="https://photopea.com" target="_blank" class="btn btn-dark btn-sm">Abrir</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Unsplash</h6>
+                        <p class="card-text small">Imágenes de alta resolución con un estilo muy profesional y
+                            artístico.</p>
+                        <a href="https://unsplash.com/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar Unsplash</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Pixabay</h6>
+                        <p class="card-text small">Banco de imágenes, ilustraciones y vectores gratuitos.</p>
+                        <a href="https://pixabay.com/es/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Pexels</h6>
+                        <p class="card-text small">Fotos y vídeos de stock compartidos por creadores talentosos.</p>
+                        <a href="https://www.pexels.com/es-es/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar Pexels</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Freepik</h6>
+                        <p class="card-text small">Recursos gráficos: vectores, fotos, archivos PSD e iconos.</p>
+                        <a href="https://www.freepik.es/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar Freepik</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h5 class="text-success">Ezgif</h5>
+                        <p class="card-text small">Conjunto de herramientas online para crear, editar y optimizar GIFs y
+                            vídeos.</p>
+                        <a href="https://ezgif.com/" target="_blank" class="btn btn-outline-light btn-sm w-100">Abrir
+                            Ezgif</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h5 class="text-success">Online GIF Tools</h5>
+                        <p class="card-text small">Una colección de utilidades sencillas para editar GIFs: cambiar
+                            colores, añadir marcos y aplicar filtros rápidos.</p>
+                        <a href="https://onlinegiftools.com/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Visitar Online GIF Tools</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h5>Splitimg</h5>
+                        <p>Herramienta automática y muy eficiente para cortar imágenes y frames de forma masiva.</p>
+                        <a href="https://www.splitimg.com/es" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline-light btn-sm w-100">
+                            Visitar Splitimg</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCION Tipografía y Fuentes -->
+
+
+        <h2 class="category-title">Tipografía y Fuentes</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mb-5">
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Google Fonts</h6>
+                        <p class="card-text small">La biblioteca gratuita más grande de fuentes optimizadas para la web.
+                        </p>
+                        <a href="https://fonts.google.com/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Explorar Fuentes</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Fontjoy</h6>
+                        <p class="card-text small">Usa IA para generar combinaciones de fuentes perfectas para tus
+                            proyectos.</p>
+                        <a href="https://fontjoy.com/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Combinar Fuentes</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">Dafont</h6>
+                        <p class="card-text small">Ideal para buscar fuentes temáticas (retro, tech, matrix, etc.) para
+                            logos.</p>
+                        <a href="https://www.dafont.com/es/" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Buscar Estilos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title text-success">WhatFont</h6>
+                        <p class="card-text small">Extensión de navegador para identificar qué fuente usa cualquier web.
+                        </p>
+                        <a href="https://chrome.google.com/webstore/detail/whatfont/jabpfojeloaigpbbbhcaavhghacmsome"
+                            target="_blank" class="btn btn-outline-light btn-sm w-100">Ver Extensión</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- SECCION Generadores Creativos (Imagen, Vídeo y Audio) -->
+
+        <h2 class="category-title">Generadores Creativos (Imagen, Vídeo y Audio)</h2>
+        <div class="row row-cols-1 row-cols-md-3">
+
+            <div class="col">
+                <div class="card h-100 shadow-lg bg-dark text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Midjourney</h5>
+                        <p class="card-text small">Laboratorio de investigación que genera imágenes
+                            artísticas de alta calidad a partir de texto.</p>
+                        <a href="https://www.midjourney.com/home" target="_blank" class="btn btn-light btn-sm w-100">Ir
+                            a Midjourney</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">OpenArt AI</h5>
+                        <p class="card-text small text-muted">Plataforma creativa para generar arte digital diverso
+                            utilizando modelos como DALL-E y Stable Diffusion.</p>
+                        <a href="https://openart.ai/" target="_blank"
+                            class="btn btn-outline-success btn-sm w-100">Explorar OpenArt</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Adobe Firefly</h5>
+                        <p class="card-text small text-muted">Modelos generativos de Adobe centrados en la creación de
+                            imágenes y efectos de texto profesionales.</p>
+                        <a href="https://www.adobe.com/es/products/firefly.html" target="_blank"
+                            class="btn btn-outline-danger btn-sm w-100">Ver Firefly</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-info">ElevenLabs v3</h5>
+                        <p class="card-text small text-muted">El modelo de voz IA más expresivo para generar locuciones
+                            y diálogos humanos en 70 idiomas.</p>
+                        <a href="https://elevenlabs.io/es/v3" target="_blank"
+                            class="btn btn-outline-info btn-sm w-100">Probar Audio</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-secondary">Runway Gen-4</h5>
+                        <p class="card-text small text-muted">Herramienta de vídeo generativo que permite crear clips
+                            realistas y consistentes con IA.</p>
+                        <a href="https://runwayml.com/research/introducing-runway-gen-4" target="_blank"
+                            class="btn btn-outline-secondary btn-sm w-100">Ver Gen-4</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #f39c12;">Leonardo.ai</h5>
+                        <p class="card-text small text-muted">Plataforma para crear imágenes con modelos preentrenados o
+                            personalizados de gran control creativo.</p>
+                        <a href="https://leonardo.ai/" target="_blank"
+                            class="btn btn-outline-warning btn-sm w-100">Abrir Leonardo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECCION Code & Dev Agents -->
+
+        <h2 class="category-title">Code & Dev Agents</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #00e5ff;">Cursor</h5>
+                        <p class="card-text small text-muted">El editor de código con IA que entiende todo tu
+                            repositorio y escribe funciones completas.</p>
+                        <a href="https://cursor.com/" target="_blank"
+                            class="btn btn-outline-info btn-sm w-100">Descargar Cursor</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #ff4081;">Windsurf</h5>
+                        <p class="card-text small text-muted">El primer IDE "agente" que puede navegar por tu terminal,
+                            archivos y navegador para programar por ti.</p>
+                        <a href="https://codeium.com/windsurf" target="_blank"
+                            class="btn btn-outline-danger btn-sm w-100">Probar Windsurf</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #ffffff;">GitHub Copilot</h5>
+                        <p class="card-text small text-muted">La IA oficial de GitHub. Ideal si prefieres quedarte en VS
+                            Code original con una integración total.</p>
+                        <a href="https://github.com/features/copilot" target="_blank"
+                            class="btn btn-outline-light btn-sm w-100">Ir a Copilot</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #f39c12;">v0 by Vercel</h5>
+                        <p class="card-text small text-muted">IA especializada en Frontend. Genera componentes de React
+                            y Tailwind CSS en segundos con solo pedirlos.</p>
+                        <a href="https://v0.dev/" target="_blank" class="btn btn-outline-warning btn-sm w-100">Crear UI
+                            con v0</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCION Asistentes de Inteligencia Artificial -->
+
+        <h2 class="category-title">Asistentes de Inteligencia Artificial</h2>
+        <div class="row row-cols-1 row-cols-md-3 mb-5">
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Claude Sonnet</h5>
+                        <p class="card-text small">Modelo inteligente de Anthropic capaz de resolver problemas
+                            complejos.</p>
+                        <a href="https://www.anthropic.com/claude/sonnet" target="_blank"
+                            class="btn btn-outline-primary btn-sm w-100">Abrir Claude</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">ChatGPT</h5>
+                        <p class="card-text small text-muted">Chatbot de OpenAI especializado en diálogo, generación de
+                            texto y ayuda en tareas cotidianas.</p>
+                        <a href="https://chatgpt.com/" target="_blank"
+                            class="btn btn-outline-primary btn-sm w-100">Abrir ChatGPT</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Gemini</h5>
+                        <p class="card-text small text-muted">Asistente multimodal de Google integrado con sus
+                            aplicaciones para potenciar la productividad.</p>
+                        <a href="https://gemini.google.com/app?hl=es" target="_blank"
+                            class="btn btn-outline-primary btn-sm w-100">Abrir Gemini</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Perplexity AI</h5>
+                        <p class="card-text small text-muted">Motor de búsqueda conversacional que ofrece respuestas
+                            directas con fuentes reales de internet.</p>
+                        <a href="https://www.perplexity.ai/" target="_blank"
+                            class="btn btn-outline-primary btn-sm w-100">Abrir Perplexity</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">DeepSeek</h5>
+                        <p class="card-text small text-muted">Plataforma avanzada de IA de código abierto para generar
+                            información, código y predicciones.</p>
+                        <a href="https://chat.deepseek.com/" target="_blank"
+                            class="btn btn-outline-primary btn-sm w-100">Abrir DeepSeek</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCION IAs de Nueva Generación   -->
+
+
+        <h2 class="category-title">IAs de Nueva Generación</h2>
+        <div class="row row-cols-1 row-cols-md-3 mb-5">
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Recraft.ai</h5>
+                        <p class="card-text small text-muted">Excelente para crear iconos vectoriales e ilustraciones
+                            con estilo consistente.</p>
+                        <a href="https://www.recraft.ai/" target="_blank"
+                            class="btn btn-outline-primary btn-sm w-100">Abrir Recraft</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Blackbox AI</h5>
+                        <p class="card-text small text-muted">IA enfocada 100% en programadores para autocompletado y
+                            búsqueda de código.</p>
+                        <a href="https://www.blackbox.ai/" target="_blank"
+                            class="btn btn-outline-primary btn-sm w-100">Probar Blackbox</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCION IA Avanzada y Productividad -->
+
+
+        <h2 class="category-title">IA Avanzada y Productividad</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h5 class="text-primary">Hugging Face</h5>
+                        <p class="card-text small">Es como el "GitHub" de la Inteligencia Artificial; aquí es donde se
+                            alojan todos los modelos de código abierto.</p>
+                        <a href="https://huggingface.co/" target="_blank"
+                            class="btn btn-outline-primary btn-sm w-100">Ver modelos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white border-secondary">
+                    <div class="card-body">
+                        <h5 class="text-primary">Gamma App</h5>
+                        <p class="card-text small">Una IA que crea presentaciones, documentos o páginas web completas en
+                            segundos a partir de un texto.</p>
+                        <a href="https://gamma.app/" target="_blank" class="btn btn-outline-primary btn-sm w-100">Crear
+                            con Gamma</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="category-title" id="comentarios">Comentarios</h2>
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card bg-dark text-white border-success">
+                    <div class="card-body">
+                        <script src="https://utteranc.es/client.js" repo="castroflix-dot/mis_recursos_web"
+                            issue-term="pathname" theme="github-dark" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+
+    <script>
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Ajustar el lienzo al tamaño de la ventana
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Caracteres: letras, números y símbolos
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%'\"#&_(),.;:?!\\|{}<>[]^~";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        // Array para controlar la posición vertical de cada columna
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function draw() {
+            // Fondo semitransparente para dejar el rastro de la letra anterior
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#0F0"; // Color de la lluvia (Verde)
+            ctx.font = fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+                // Elegir un caracter al azar
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+
+                // Dibujar la letra
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // Si la gota llega al final o por azar, reiniciarla arriba
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        // Ejecutar la animación cada 33 milisegundos (~30 FPS)
+        setInterval(draw, 33);
+    </script>
+
+</body>
+
+</html>
