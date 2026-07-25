@@ -219,3 +219,9 @@ main .card .text-muted {
 .oculto {
     display: none !important;
 }
+
+/* --- 8. COMENTARIOS (GISCUS) --- */
+.comentarios-container {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
