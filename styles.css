@@ -162,8 +162,8 @@ main .card .text-muted {
     position: relative !important;
 }
 
-/* Ajusta el formulario que genera el JS */
-.card-reportable form {
+/* Posiciona el botón de reporte directamente sobre la tarjeta */
+.card-reportable .btn-reporte {
     position: absolute;
     top: 5px;
     right: 5px;
