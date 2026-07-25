@@ -7,7 +7,8 @@ Página estática desarrollada con **HTML5, CSS3, Bootstrap y JavaScript** que r
 ## ✨ Funcionalidades
 
 - **Buscador en tiempo real**: filtra los recursos por palabra clave sin recargar la página, ocultando también las categorías que se quedan sin resultados.
-- **Reporte de enlaces caídos**: cada tarjeta incluye un botón que permite avisar por email de un enlace roto (generado dinámicamente con JavaScript).
+- **Reporte de enlaces caídos**: cada tarjeta incluye un botón que envía un email automático al administrador avisando del enlace roto, usando [EmailJS](https://www.emailjs.com/) (envío directo desde el navegador, sin backend).
+- **Sistema de comentarios**: integración con [giscus](https://giscus.app/), que usa las Discussions de GitHub como base de datos de comentarios (sin servidor ni base de datos propia).
 - **Fondo animado tipo "Matrix"**: efecto de lluvia de caracteres renderizado con `<canvas>` y JavaScript puro.
 - **Diseño responsive**: adaptado a móvil, tablet y escritorio mediante el grid system de Bootstrap.
 - **+90 recursos organizados** en categorías: tutoriales, diseño CSS, iconografía, tipografía, editores multimedia, IA generativa y herramientas de desarrollo asistido por IA.
@@ -19,8 +20,10 @@ Página estática desarrollada con **HTML5, CSS3, Bootstrap y JavaScript** que r
 | HTML5 | Estructura semántica del contenido |
 | CSS3 | Estilos personalizados, tema oscuro con acentos verde "Matrix" |
 | Bootstrap 4 | Sistema de rejilla (grid) y componentes base (cards, botones) |
-| JavaScript (vanilla) | Buscador dinámico, animación de canvas, generación de formularios de reporte |
-| PHP | Procesamiento del formulario de reporte de enlaces (`reporte.php`, funcional en hosting con soporte PHP) |
+| JavaScript (vanilla) | Buscador dinámico, animación de canvas, lógica de reporte de enlaces |
+| EmailJS | Envío de emails de reporte directamente desde el navegador (sin backend) |
+| giscus | Sistema de comentarios basado en GitHub Discussions |
+| PHP | Alternativa de envío de reportes vía `reporte.php`, usada en el despliegue en hosting propio con soporte PHP |
 
 ## 📁 Estructura del proyecto
 
@@ -28,12 +31,12 @@ Página estática desarrollada con **HTML5, CSS3, Bootstrap y JavaScript** que r
 mis_recursos_web/
 ├── index.html      # Estructura principal y contenido
 ├── styles.css       # Estilos y tema visual
-├── script.js         # Lógica del buscador, reportes y animación matrix
-├── reporte.php      # Backend de envío de reportes por email (requiere hosting PHP)
+├── script.js         # Lógica del buscador, reportes (EmailJS) y animación matrix
+├── reporte.php      # Backend alternativo de envío de reportes (solo para hosting con soporte PHP)
 └── README.md
 ```
 
-> ⚠️ **Nota técnica:** `reporte.php` requiere un servidor con soporte PHP y SMTP configurado para funcionar (por ejemplo un hosting tradicional). En GitHub Pages, al ser hosting estático, el formulario de reporte se muestra pero no envía el correo, ya que este servicio no ejecuta código de servidor.
+> 💡 **Dos formas de despliegue, dos formas de reporte:** en [GitHub Pages](https://castroflix-dot.github.io/mis_recursos_web/) (hosting estático) el botón de reporte usa **EmailJS**, ya que no hay servidor que ejecute PHP. En el despliegue de prácticas del curso (hosting con PHP y SMTP configurado) se usa `reporte.php`. El código de `script.js` está preparado para la versión de GitHub Pages.
 
 ## 🚀 Cómo usarlo localmente
 
