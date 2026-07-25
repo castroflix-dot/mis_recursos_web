@@ -1,29 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // 1. Lógica para los botones de reporte
+
+    // 1. Lógica para los botones de reporte (con EmailJS)
     const tarjetas = document.querySelectorAll('.card-reportable');
 
     tarjetas.forEach(card => {
-        // Obtenemos el título (buscando h5, h6 o .card-title) y el enlace
         const tituloEl = card.querySelector('.card-title') || card.querySelector('h5') || card.querySelector('h6');
         const titulo = tituloEl ? tituloEl.innerText : "Enlace";
         const enlace = card.querySelector('a') ? card.querySelector('a').href : "#";
 
-        // Creamos el formulario
-        const form = document.createElement('form');
-        form.action = 'reporte.php';
-        form.method = 'POST';
-        form.target = "_blank";
-        
-        form.innerHTML = `
-            <input type="hidden" name="nombre_enlace" value="${titulo}">
-            <input type="hidden" name="url_enlace" value="${enlace}">
-            <button type="submit" class="btn-reporte" title="Reportar enlace caído">📩</button>
-        `;
+        const boton = document.createElement('button');
+        boton.type = 'button';
+        boton.className = 'btn-reporte';
+        boton.title = 'Reportar enlace caído';
+        boton.textContent = '📩';
 
-        // Añadimos el formulario a la tarjeta
-        card.appendChild(form);
+        boton.addEventListener('click', () => {
+            boton.disabled = true;
+            boton.textContent = '⏳';
+
+            emailjs.send('service_5d90udt', 'template_of2vo5c', {
+                nombre_enlace: titulo,
+                url_enlace: enlace,
+                fecha: new Date().toLocaleString('es-ES')
+            }).then(() => {
+                boton.textContent = '✅';
+            }, (error) => {
+                console.error('Error al enviar el reporte:', error);
+                boton.textContent = '❌';
+                boton.disabled = false;
+            });
+        });
+
+        card.appendChild(boton);
     });
-
+    
     // 1.5 Lógica del buscador
     const inputBusqueda = document.getElementById('buscadorEnlaces');
     const contador = document.getElementById('resultadosContador');
@@ -63,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 : '';
         });
     }
-    
+
     // 2. Lógica para el canvas Matrix
     const canvas = document.getElementById('matrixCanvas');
     if (canvas) {
