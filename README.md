@@ -2,7 +2,7 @@
 
 Página estática desarrollada con **HTML5, CSS3, Bootstrap y JavaScript** que recopila y organiza por categorías las herramientas y recursos utilizados durante el curso de desarrollo web (IFCD110 - Confecció i publicació de pàgines web).
 
-🔗 **Demo en vivo:** [castroflix-dot.github.io/mis_recursos_web](https://castroflix-dot.github.io/mis_recursos_web/)
+🔗 **Demo en vivo:** [castroflix.github.io/mis_recursos_web](https://castroflix.github.io/mis_recursos_web/)
 
 ## ✨ Funcionalidades
 
@@ -36,13 +36,13 @@ mis_recursos_web/
 └── README.md
 ```
 
-> 💡 **Dos formas de despliegue, dos formas de reporte:** en [GitHub Pages](https://castroflix-dot.github.io/mis_recursos_web/) (hosting estático) el botón de reporte usa **EmailJS**, ya que no hay servidor que ejecute PHP. En el despliegue de prácticas del curso (hosting con PHP y SMTP configurado) se usa `reporte.php`. El código de `script.js` está preparado para la versión de GitHub Pages.
+> 💡 **Dos formas de despliegue, dos formas de reporte:** en [GitHub Pages](https://castroflix.github.io/mis_recursos_web/) (hosting estático) el botón de reporte usa **EmailJS**, ya que no hay servidor que ejecute PHP. En el despliegue de prácticas del curso (hosting con PHP y SMTP configurado) se usa `reporte.php`. El código de `script.js` está preparado para la versión de GitHub Pages.
 
 ## 🚀 Cómo usarlo localmente
 
 1. Clona el repositorio:
    ```
-   git clone https://github.com/castroflix-dot/mis_recursos_web.git
+   git clone https://github.com/castroflix/mis_recursos_web.git
    ```
 2. Abre `index.html` en tu navegador.
 
@@ -53,4 +53,4 @@ No requiere instalación de dependencias ni build: es HTML, CSS y JS puro (más 
 **Sergi Castro Navas**
 Técnico en desarrollo web · Frontend / Backend
 📧 castroflix@gmail.com
-🔗 [GitHub](https://github.com/castroflix-dot)
+🔗 [GitHub](https://github.com/castroflix)
