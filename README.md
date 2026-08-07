@@ -27,12 +27,9 @@ Página estática desarrollada con **HTML5, CSS3, Bootstrap y JavaScript** que r
 
 ## 📁 Estructura del proyecto
 
-```
-## 📁 Estructura del Proyecto
-
 El proyecto sigue una organización limpia de archivos agrupando todos los assets dentro de su correspondiente subdirectorio:
 
-```
+```text
 mis_recursos_web/
 ├── index.html          # Estructura HTML5 principal y directorio de tarjetas
 ├── README.md           # Documentación completa del proyecto
