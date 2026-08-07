@@ -11,7 +11,7 @@ Página estática desarrollada con **HTML5, CSS3, Bootstrap y JavaScript** que r
 - **Sistema de comentarios**: integración con [giscus](https://giscus.app/), que usa las Discussions de GitHub como base de datos de comentarios (sin servidor ni base de datos propia).
 - **Fondo animado tipo "Matrix"**: efecto de lluvia de caracteres renderizado con `<canvas>` y JavaScript puro.
 - **Diseño responsive**: adaptado a móvil, tablet y escritorio mediante el grid system de Bootstrap.
-- **+90 recursos organizados** en categorías: tutoriales, diseño CSS, iconografía, tipografía, editores multimedia, IA generativa y herramientas de desarrollo asistido por IA.
+- **+70 recursos organizados** en categorías: tutoriales, diseño CSS, iconografía, tipografía, editores multimedia, IA generativa y herramientas de desarrollo asistido por IA.
 
 ## 🛠️ Tecnologías
 
