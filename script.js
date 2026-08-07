@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         card.appendChild(boton);
     });
-    
+
     // 1.5 Lógica del buscador
     const inputBusqueda = document.getElementById('buscadorEnlaces');
     const contador = document.getElementById('resultadosContador');
@@ -75,24 +75,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 2. Lógica para el canvas Matrix
+    // 2. Lógica para el canvas Matrix con control de pausa/ocultar
     const canvas = document.getElementById('matrixCanvas');
+    const toggleBtn = document.getElementById('toggleMatrixBtn');
+
     if (canvas) {
         const ctx = canvas.getContext('2d');
-
         const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%'\"#&_(),.;:?!\\|{}<>[]^~";
         const fontSize = 16;
         let columns = 0;
         let drops = [];
+        let intervalId = null;
+        let isRunning = true;
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-
             const nuevasColumnas = Math.floor(canvas.width / fontSize);
-
-            // Conserva el progreso de las columnas ya existentes y añade
-            // las nuevas (o recorta las sobrantes) sin reiniciar toda la animación
             const nuevasDrops = [];
             for (let x = 0; x < nuevasColumnas; x++) {
                 nuevasDrops[x] = drops[x] !== undefined ? drops[x] : 1;
@@ -118,6 +117,41 @@ document.addEventListener("DOMContentLoaded", function () {
                 drops[i]++;
             }
         }
-        setInterval(draw, 33);
+
+        function startMatrix() {
+            if (!intervalId) {
+                intervalId = setInterval(draw, 33);
+            }
+        }
+
+        function stopMatrix() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        }
+
+        startMatrix();
+
+        // Toggle al hacer clic
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function () {
+                if (isRunning) {
+                    stopMatrix();
+                    canvas.style.display = 'none'; // Oculta completamente el canvas para lectura limpia
+                    toggleBtn.textContent = '▶️ Activar Fondo';
+                    toggleBtn.classList.remove('btn-outline-light');
+                    toggleBtn.classList.add('btn-success');
+                    isRunning = false;
+                } else {
+                    canvas.style.display = 'block';
+                    startMatrix();
+                    toggleBtn.textContent = '⏸️ Pausar Fondo';
+                    toggleBtn.classList.remove('btn-success');
+                    toggleBtn.classList.add('btn-outline-light');
+                    isRunning = true;
+                }
+            });
+        }
     }
 });
