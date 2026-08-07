@@ -288,31 +288,34 @@ main .card .text-muted {
     margin-bottom: 4rem;
 }
 
-/* --- 9. ADAPTACIÓN MÓVIL PARA EL HEADER --- */
+/* --- 9. ADAPTACIÓN MÓVIL (HEADER Y TIPOGRAFÍA) --- */
 @media (max-width: 576px) {
 
-    /* Permite que el header crezca según el contenido en móviles */
+    /* Permitir que el contenedor del header se adapte al contenido */
     .matrix-header,
     .overlay {
         height: auto !important;
         min-height: 320px;
-        padding: 2rem 1rem;
+        padding: 2.5rem 1rem 2rem 1rem;
     }
 
-    /* Reduce ligeramente el tamaño del título en móviles */
-    .header-content h1 {
-        font-size: 2.2rem !important;
+    /* Reducir el tamaño de la letra del título principal */
+    .header-content h1,
+    .header-content h1.display-3 {
+        font-size: 2rem !important;
+        line-height: 1.2;
     }
 
-    /* Reduce la tipografía de la bajada */
+    /* Ajustar el tamaño del texto descriptivo */
     .header-content .lead {
-        font-size: 1rem;
+        font-size: 0.95rem !important;
+        margin-top: 0.5rem;
     }
 
-    /* Ajusta el tamaño de los botones para pantallas pequeñas */
+    /* Ajustar los botones para que entren holgadamente */
     .header-content .btn {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.85rem !important;
+        padding: 0.4rem 0.8rem !important;
         margin-top: 0.5rem !important;
     }
 }
