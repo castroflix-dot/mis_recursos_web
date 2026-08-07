@@ -57,7 +57,8 @@ body {
     font-size: 1.8rem;
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #00ff41; /* fallback si alguna sección no lleva clase cat-* */
+    color: #00ff41;
+    /* fallback si alguna sección no lleva clase cat-* */
     text-transform: uppercase;
     letter-spacing: 1.5px;
     border-left: 5px solid #00ff41;
@@ -72,17 +73,49 @@ body {
    de marca (botones, buscador, hover) y no se repite aquí salvo en
    "Code & Dev Agents", donde encaja temáticamente. */
 
-.cat-tutoriales { --cat-color: #00e5ff; }
-.cat-diseno     { --cat-color: #9d6bff; }
-.cat-iconos     { --cat-color: #4d9fff; }
-.cat-editores   { --cat-color: #ff5c5c; }
-.cat-optimiz    { --cat-color: #ffb020; }
-.cat-tipografia { --cat-color: #ff4fa3; }
-.cat-creativos  { --cat-color: #ff8a3d; }
-.cat-devagents  { --cat-color: #00ff41; }
-.cat-asistentes { --cat-color: #7c8cff; }
-.cat-newgen     { --cat-color: #2dd4bf; }
-.cat-ia-avanz   { --cat-color: #b8e34d; }
+.cat-tutoriales {
+    --cat-color: #00e5ff;
+}
+
+.cat-diseno {
+    --cat-color: #9d6bff;
+}
+
+.cat-iconos {
+    --cat-color: #4d9fff;
+}
+
+.cat-editores {
+    --cat-color: #ff5c5c;
+}
+
+.cat-optimiz {
+    --cat-color: #ffb020;
+}
+
+.cat-tipografia {
+    --cat-color: #ff4fa3;
+}
+
+.cat-creativos {
+    --cat-color: #ff8a3d;
+}
+
+.cat-devagents {
+    --cat-color: #00ff41;
+}
+
+.cat-asistentes {
+    --cat-color: #7c8cff;
+}
+
+.cat-newgen {
+    --cat-color: #2dd4bf;
+}
+
+.cat-ia-avanz {
+    --cat-color: #b8e34d;
+}
 
 h2.category-title[class*="cat-"] {
     color: var(--cat-color) !important;
@@ -253,4 +286,33 @@ main .card .text-muted {
 .comentarios-container {
     margin-top: 2rem;
     margin-bottom: 4rem;
+}
+
+/* --- 9. ADAPTACIÓN MÓVIL PARA EL HEADER --- */
+@media (max-width: 576px) {
+
+    /* Permite que el header crezca según el contenido en móviles */
+    .matrix-header,
+    .overlay {
+        height: auto !important;
+        min-height: 320px;
+        padding: 2rem 1rem;
+    }
+
+    /* Reduce ligeramente el tamaño del título en móviles */
+    .header-content h1 {
+        font-size: 2.2rem !important;
+    }
+
+    /* Reduce la tipografía de la bajada */
+    .header-content .lead {
+        font-size: 1rem;
+    }
+
+    /* Ajusta el tamaño de los botones para pantallas pequeñas */
+    .header-content .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        margin-top: 0.5rem !important;
+    }
 }
