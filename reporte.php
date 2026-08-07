@@ -1,7 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombreEnlace = $_POST['nombre_enlace'];
-    $urlEnlace = $_POST['url_enlace'];
+    // Se eliminan saltos de línea y retornos de carro para evitar header injection
+    // en el envío del correo (asunto/cuerpo construidos con estos valores).
+    $nombreEnlace = str_replace(["\r", "\n"], '', $_POST['nombre_enlace'] ?? '');
+    $urlEnlace = str_replace(["\r", "\n"], '', $_POST['url_enlace'] ?? '');
     
     $para = "castroflix@gmail.com"; // CAMBIA ESTO POR TU EMAIL
     $asunto = "Reporte de enlace caido: " . $nombreEnlace;

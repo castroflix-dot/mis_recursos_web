@@ -39,8 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const contador = document.getElementById('resultadosContador');
 
     if (inputBusqueda) {
-        // Cada categoría = su h2.category-title + el .row que le sigue
-        const categorias = Array.from(document.querySelectorAll('.category-title')).map(titulo => ({
+        // Cada categoría = su h2.category-title (con clase cat-*) + el .row que le sigue
+        // Se excluye el título "Comentarios" (no lleva clase cat-*, no tiene tarjetas asociadas)
+        const categorias = Array.from(document.querySelectorAll('.category-title[class*="cat-"]')).map(titulo => ({
             titulo: titulo,
             fila: titulo.nextElementSibling
         }));
@@ -79,20 +80,28 @@ document.addEventListener("DOMContentLoaded", function () {
     if (canvas) {
         const ctx = canvas.getContext('2d');
 
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%'\"#&_(),.;:?!\\|{}<>[]^~";
+        const fontSize = 16;
+        let columns = 0;
+        let drops = [];
+
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+
+            const nuevasColumnas = Math.floor(canvas.width / fontSize);
+
+            // Conserva el progreso de las columnas ya existentes y añade
+            // las nuevas (o recorta las sobrantes) sin reiniciar toda la animación
+            const nuevasDrops = [];
+            for (let x = 0; x < nuevasColumnas; x++) {
+                nuevasDrops[x] = drops[x] !== undefined ? drops[x] : 1;
+            }
+            drops = nuevasDrops;
+            columns = nuevasColumnas;
         }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
-
-        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%'\"#&_(),.;:?!\\|{}<>[]^~";
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-        const drops = [];
-        for (let x = 0; x < columns; x++) {
-            drops[x] = 1;
-        }
 
         function draw() {
             ctx.fillStyle = "rgba(0, 0, 0, 0.05)";

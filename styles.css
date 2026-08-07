@@ -30,17 +30,6 @@ body {
     overflow: hidden;
 }
 
-#headerVideo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-}
-
 .overlay {
     position: absolute;
     top: 0;
@@ -182,18 +171,6 @@ main .card-text {
 main .card .text-muted {
     color: #f1f1f1 !important;
     opacity: 0.92;
-}
-
-.btn-outline-primary,
-.btn-outline-success {
-    color: #00ff41 !important;
-    border-color: #00ff41 !important;
-}
-
-.btn-outline-primary:hover,
-.btn-outline-success:hover {
-    background-color: #00ff41 !important;
-    color: #000 !important;
 }
 
 /* Para resaltar tarjetas especiales de IA o Agentes */
